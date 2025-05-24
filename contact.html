@@ -41,7 +41,7 @@
               "accent-glow-dark": "rgba(174, 255, 0, 0.3)", // Disesuaikan dengan brand-green #aeff00
             },
             fontFamily: {
-              bold: ["Glitz", "sans-serif"],
+              sanscondensed: ["Glitz", "sans-serif"],
               sans: ["Figtree", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
               serif: ["Castoro", "ui-serif", "Georgia", "serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
             },
@@ -156,6 +156,16 @@
         color: #0058CC;
         font-weight: 700;
       }
+
+      @font-face {
+        font-family: "Glitz";
+        src: url("./dist/fonts/Glitz.woff2") format("woff2"),
+          url("./dist/fonts/Glitz.woff") format("woff"),
+          url("./dist/fonts/Glitz.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
     </style>
   </head>
   <body
@@ -168,9 +178,20 @@
         <div class="flex items-center justify-between h-16 sm:h-20">
           <a
             href="index.html"
-            class="ext-2xl sm:text-3xl font-extrabold text-text-light-primary dark:text-text-dark-primary hover:text-brand-green dark:hover:text-brand-green transition-colors duration-300"
+            class="text-2xl sm:text-3xl font-extrabold relative"
           >
-            ACCAIVE<span class="text-brand-blue">STUDIO</span>//
+            <img 
+              src="/dist/img/acc1.png" 
+              alt="ACCAIVE STUDIO" 
+              class="h-8 sm:h-10 transition-opacity duration-300"
+              id="logo-default"
+            />
+            <img 
+              src="/dist/img/acc.png" 
+              alt="ACCAIVE STUDIO" 
+              class="absolute top-0 left-0 h-8 sm:h-10 opacity-0 hover:opacity-100 transition-opacity duration-300"
+              id="logo-hover"
+            />
           </a>
           <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
             <a
@@ -297,12 +318,12 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-12 sm:mb-16" data-aos="fade-down">
             <h1
-              class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-text-light-primary dark:text-text-dark-primary"
+              class="text-4xl sm:text-5xl md:text-6xl font-sans font-extrabold text-text-light-primary dark:text-text-dark-primary"
             >
               LET'S <span class="text-brand-blue">COLLABORATE</span>
             </h1>
             <p
-              class="text-base sm:text-lg text-text-light-secondary dark:text-text-dark-secondary/70 mt-4 sm:mt-6 max-w-lg sm:max-w-xl md:max-w-2xl mx-auto font-light"
+              class="text-base sm:text-lg text-text-light-secondary dark:text-text-dark-secondary/70 mt-4 sm:mt-6 max-w-lg sm:max-w-xl md:max-w-2xl mx-auto font-serif"
             >
               Have a groundbreaking idea or a challenging project? We're ready
               to listen and transform your vision into reality. Reach out and
@@ -494,9 +515,9 @@
                         Voice Link
                       </h3>
                       <a
-                        href="tel:+620000000000"
+                        href="tel:+6285161387045"
                         class="hover:text-brand-green transition duration-300 ease-in-out font-light text-xs sm:text-sm"
-                        >(+62) 000-000-0000</a
+                        >(+62) 85161387045</a
                       >
                     </div>
                   </div>
@@ -540,9 +561,9 @@
             >
             |
             <a
-              href="tel:+620000000000"
+              href="tel:+6285161387045"
               class="hover:text-brand-blue dark:hover:text-brand-green transition duration-300 ease-in-out"
-              >(+62) 000-000-0000</a
+              >(+62) 85161387045</a
             >
           </p>
           <div class="flex justify-center space-x-4 sm:space-x-6">

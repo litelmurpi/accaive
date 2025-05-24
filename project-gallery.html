@@ -38,7 +38,7 @@
               "accent-glow-dark": "rgba(22, 211, 118, 0.3)",
             },
             fontFamily: {
-              sans: ["Glitz", "sans-serif"],
+              sanscondensed: ["Glitz", "sans-serif"],
               sans: ["Figtree", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
               serif: ["Castoro", "ui-serif", "Georgia", "serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
             },
@@ -165,6 +165,16 @@
       .filter-button.active {
         @apply bg-brand-blue text-white dark:bg-brand-green dark:text-bg-dark;
       }
+
+      @font-face {
+        font-family: "Glitz";
+        src: url("./dist/fonts/Glitz.woff2") format("woff2"),
+          url("./dist/fonts/Glitz.woff") format("woff"),
+          url("./dist/fonts/Glitz.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
     </style>
   </head>
   <body
@@ -177,9 +187,20 @@
         <div class="flex items-center justify-between h-16 sm:h-20">
           <a
             href="index.html"
-            class="text-2xl sm:text-3xl font-extrabold text-text-light-primary dark:text-text-dark-primary hover:text-brand-green dark:hover:text-brand-green transition-colors duration-300"
+            class="text-2xl sm:text-3xl font-extrabold relative"
           >
-            ACCAIVE<span class="text-brand-blue">STUDIO</span>//
+            <img 
+              src="/dist/img/acc1.png" 
+              alt="ACCAIVE STUDIO" 
+              class="h-8 sm:h-10 transition-opacity duration-300"
+              id="logo-default"
+            />
+            <img 
+              src="/dist/img/acc.png" 
+              alt="ACCAIVE STUDIO" 
+              class="absolute top-0 left-0 h-8 sm:h-10 opacity-0 hover:opacity-100 transition-opacity duration-300"
+              id="logo-hover"
+            />
           </a>
           <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
             <a
@@ -634,9 +655,9 @@
             >
             |
             <a
-              href="tel:+620000000000"
+              href="tel:+6285161387045"
               class="hover:text-brand-blue dark:hover:text-brand-green transition duration-300 ease-in-out"
-              >(+62) 000-000-0000</a
+              >(+62) 85161387045</a
             >
           </p>
           <div class="flex justify-center space-x-4 sm:space-x-6">
