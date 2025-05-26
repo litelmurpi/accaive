@@ -5,7 +5,7 @@ tailwind.config = {
     extend: {
       colors: {
         // Core Palette (remains the same)
-        "brand-blue": "#0058CC",
+        "brand-blue": "#0000FF",
         "brand-green": "#aeff00",
         "brand-green-dark": "#079D5E",
         "brand-muted-blue": "#485C95",
