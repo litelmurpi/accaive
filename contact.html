@@ -21,24 +21,24 @@
         theme: {
           extend: {
             colors: {
-              "brand-blue": "#0000FF",
-              "brand-green": "#aeff00", // Sesuai contact.html yang dikerjakan
+              "brand-blue": "#0058CC", // Digunakan di beberapa style custom Anda, sesuaikan jika perlu
+              "brand-green": "#aeff00",
               "brand-green-dark": "#079D5E",
               "brand-muted-blue": "#485C95",
 
               "bg-light": "#F6F5F5",
               "surface-light": "#FFFFFF",
               "text-light-primary": "#1f2937",
-              "text-light-secondary": "#4b5563",
+              "text-light-secondary": "#4b5563", // Warna placeholder untuk mode terang
               "border-light": "#e5e7eb",
               "accent-glow-light": "rgba(0, 88, 204, 0.2)",
 
               "bg-dark": "#1A1A1A",
               "surface-dark": "#2C2C2C",
               "text-dark-primary": "#F6F5F5",
-              "text-dark-secondary": "rgba(246, 245, 245, 0.75)",
+              "text-dark-secondary": "rgba(246, 245, 245, 0.75)", // Warna placeholder untuk mode gelap
               "border-dark": "rgba(72, 92, 149, 0.4)",
-              "accent-glow-dark": "rgba(174, 255, 0, 0.3)", // Disesuaikan dengan brand-green #aeff00
+              "accent-glow-dark": "rgba(174, 255, 0, 0.3)",
             },
             fontFamily: {
               sanscondensed: ["Glitz", "sans-serif"],
@@ -50,39 +50,39 @@
       };
     </script>
     <style>
-      /* Custom scrollbar */
+      /* Custom scrollbar (menggunakan brand-blue dari config jika berbeda dari #0000FF) */
       ::-webkit-scrollbar {
         width: 8px;
       }
       html:not(.dark) ::-webkit-scrollbar-track {
-        background: #e5e7eb;
+        background: #e5e7eb; /* border-light */
       }
       html:not(.dark) ::-webkit-scrollbar-thumb {
-        background: #485C95;
+        background: #485C95; /* brand-muted-blue */
         border-radius: 4px;
       }
       html:not(.dark) ::-webkit-scrollbar-thumb:hover {
-        background: #0000FF;
+        background: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
       }
       html.dark ::-webkit-scrollbar-track {
-        background: #2C2C2C;
+        background: #2C2C2C; /* surface-dark */
       }
       html.dark ::-webkit-scrollbar-thumb {
-        background: #0000FF;
+        background: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
         border-radius: 4px;
       }
       html.dark ::-webkit-scrollbar-thumb:hover {
-        background: #aeff00;
+        background: #aeff00; /* brand-green */
       }
 
-      /* Text Selection */
+      /* Text Selection (menggunakan brand-blue dari config jika berbeda dari #0000FF) */
       html:not(.dark) ::selection {
-        background-color: #0000FF;
-        color: #F6F5F5;
+        background-color: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
+        color: #F6F5F5; /* text-dark-primary atau bg-light */
       }
       html.dark ::selection {
-        background-color: #aeff00;
-        color: #1A1A1A;
+        background-color: #aeff00; /* brand-green */
+        color: #1A1A1A; /* bg-dark */
       }
 
       .highlight-link {
@@ -106,54 +106,54 @@
       }
 
       html:not(.dark) .highlight-link {
-        color: #1f2937;
+        color: #1f2937; /* text-light-primary */
       }
       html:not(.dark) .highlight-link::after {
-        background: #0000FF;
+        background: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
       }
       html:not(.dark) .highlight-link:hover::after {
-        background: #aeff00;
+        background: #aeff00; /* brand-green */
       }
       html:not(.dark) .highlight-link.active-contact::after {
         width: 100%;
         right: auto;
         left: 0;
-        background: #0000FF;
+        background: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
       }
       html:not(.dark) .nav-link-text {
-        color: #1f2937;
+        color: #1f2937; /* text-light-primary */
       }
       html:not(.dark) .nav-link-text:hover {
-        color: #0000FF;
+        color: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
       }
       html:not(.dark) .active-contact .nav-link-text {
-        color: #0000FF;
+        color: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
         font-weight: 700;
       }
 
       html.dark .highlight-link {
-        color: #F6F5F5;
+        color: #F6F5F5; /* text-dark-primary */
       }
       html.dark .highlight-link::after {
-        background: #aeff00;
+        background: #aeff00; /* brand-green */
       }
       html.dark .highlight-link:hover::after {
-        background: #0000FF;
+        background: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
       }
       html.dark .highlight-link.active-contact::after {
         width: 100%;
         right: auto;
         left: 0;
-        background: #0000FF;
+        background: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
       }
       html.dark .nav-link-text {
-        color: #F6F5F5;
+        color: #F6F5F5; /* text-dark-primary */
       }
       html.dark .nav-link-text:hover {
-        color: #aeff00;
+        color: #aeff00; /* brand-green */
       }
       html.dark .active-contact .nav-link-text {
-        color: #0000FF;
+        color: #0058CC; /* brand-blue (pastikan ini sesuai config jika ada perubahan) */
         font-weight: 700;
       }
 
@@ -381,14 +381,18 @@
                     class="block text-xs sm:text-sm font-medium text-text-light-secondary dark:text-text-dark-secondary/80 mb-1"
                     >Subject Line_</label
                   >
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
+                  <select 
+                    name="subject" 
+                    id="subject" 
                     required
-                    class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base bg-bg-light dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-sm shadow-sm focus:ring-2 focus:ring-brand-green focus:border-brand-green text-text-light-primary dark:text-text-dark-primary transition-all duration-150 ease-in-out placeholder-text-light-secondary/60 dark:placeholder-text-dark-secondary/40"
-                    placeholder="Re: The Next Big Thing"
-                  />
+                    class="w-full px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base bg-bg-light dark:bg-bg-dark border border-border-light dark:border-border-dark rounded-sm shadow-sm focus:ring-2 focus:ring-brand-green focus:border-brand-green text-text-light-primary dark:text-text-dark-primary transition-all duration-150 ease-in-out"
+                  >
+                    <option value="" disabled selected>Pilih subjek</option>
+                    <option value="renovasi">Renovasi</option>
+                    <option value="bangun-baru">Bangun Baru</option>
+                    <option value="interior">Interior</option>
+                    <option value="desain">Desain</option>
+                  </select>
                 </div>
                 <div class="mb-6 sm:mb-8">
                   <label
@@ -408,7 +412,7 @@
                 <div>
                   <button
                     type="submit"
-                    class="w-full bg-brand-blue hover:bg-brand-green text-white dark:text-text-dark-primary font-bold py-3 px-4 sm:py-4 sm:px-6 rounded-sm text-base sm:text-lg uppercase tracking-wider transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-[0_0_25px_var(--glow-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark focus:ring-brand-green"
+                    class="w-full bg-brand-blue hover:bg-brand-green text-white dark:text-bg-dark font-bold py-3 px-4 sm:py-4 sm:px-6 rounded-sm text-base sm:text-lg uppercase tracking-wider transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-[0_0_25px_var(--glow-color)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-light dark:focus:ring-offset-surface-dark focus:ring-brand-green"
                     style="--glow-color: theme('colors.accent-glow-light')"
                   >
                     Initiate Contact
@@ -634,11 +638,10 @@
               .bindPopup('AccaiveStudio Location.<br>Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171.')
               .openPopup();
         } else {
-            console.error("Elemen peta #map tidak ditemukan atau pustaka Leaflet belum dimuat.");
+            // console.error("Elemen peta #map tidak ditemukan atau pustaka Leaflet belum dimuat.");
         }
       }
 
-      // --- Jalankan semua inisialisasi setelah DOM siap ---
       document.addEventListener('DOMContentLoaded', function() {
         
         if (typeof AOS !== 'undefined') {
@@ -656,38 +659,57 @@
         const themeToggleMobileBtn = document.getElementById("theme-toggle-mobile");
         const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
         const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
-        const contactFormSubmitButton = document.querySelector('#contactForm button[type="submit"]'); // Tombol submit di form kontak
-        
-        // Variabel locationImage dan path gambar tidak lagi digunakan untuk applyTheme jika peta sudah menggantikannya.
-        // const locationImage = document.getElementById('locationImage');
-        // const lightLocationImage ="https://placehold.co/600x400/E0E7FF/4F46E5?text=Location+Visual+Light&font=syne";
-        // const darkLocationImage ="https://placehold.co/600x400/374151/D1D5DB?text=Dark+Themed+Location&font=syne";
+        const contactFormSubmitButton = document.querySelector('#contactForm button[type="submit"]');
+        const logoDefault = document.getElementById('logo-default'); // Ambil elemen logo
+        const subjectSelect = document.getElementById('subject'); // Ambil elemen select subjek
+
+        const contactLightModeLogo = "/dist/img/accaive-black.png"; 
+        const contactDarkModeLogo = "/dist/img/acc1.png";  // Logo awal sudah ini      
 
         function applyTheme(isDarkMode) {
           if (isDarkMode) {
             document.documentElement.classList.add("dark");
             if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove("hidden");
             if (themeToggleLightIcon) themeToggleLightIcon.classList.add("hidden");
-            if (contactFormSubmitButton) contactFormSubmitButton.style.setProperty("--glow-color", "theme('colors.accent-glow-dark')");
-            // if (locationImage && typeof darkLocationImage !== 'undefined') locationImage.src = darkLocationImage;
-            const logoDefault = document.getElementById("logo-default");
-            if (logoDefault) logoDefault.src = "/dist/img/acc1.png"; // Ganti dengan path logo gelap
+            
+            if (contactFormSubmitButton) contactFormSubmitButton.style.setProperty("--glow-color", tailwind.config.theme.extend.colors["accent-glow-dark"]);
+            if (logoDefault) logoDefault.src = contactDarkModeLogo;
+
             if (themeToggleMobileBtn) { 
               themeToggleMobileBtn.innerHTML = `<svg class="h-5 w-5 text-text-dark-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>`;
             }
-          } else {
+          } else { // Light Mode
             document.documentElement.classList.remove("dark");
             if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add("hidden");
             if (themeToggleLightIcon) themeToggleLightIcon.classList.remove("hidden");
-            if (contactFormSubmitButton) contactFormSubmitButton.style.setProperty("--glow-color", "theme('colors.accent-glow-light')");
-            // if (locationImage && typeof lightLocationImage !== 'undefined') locationImage.src = lightLocationImage;
-            const logoDefault = document.getElementById("logo-default");
-            if (logoDefault) logoDefault.src = "/dist/img/accaive-black.png"; // Ganti dengan path logo terang
+
+            if (contactFormSubmitButton) contactFormSubmitButton.style.setProperty("--glow-color", tailwind.config.theme.extend.colors["accent-glow-light"]);
+            if (logoDefault) logoDefault.src = contactLightModeLogo;
+
             if (themeToggleMobileBtn) { 
               themeToggleMobileBtn.innerHTML = `<svg class="h-5 w-5 text-brand-blue" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.464 4.95a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM15 11a1 1 0 100-2H3a1 1 0 100 2h12zM4 13a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1z"></path></svg>`;
             }
           }
+          // Perbarui warna teks select setelah tema diterapkan
+          if (subjectSelect) updateSubjectSelectColor(); 
         }
+
+        // Fungsi untuk memperbarui warna teks elemen select subjek
+        function updateSubjectSelectColor() {
+          if (subjectSelect.value === "") {
+            subjectSelect.classList.remove('text-text-light-primary', 'dark:text-text-dark-primary');
+            subjectSelect.classList.add('text-text-light-secondary', 'dark:text-text-dark-secondary');
+          } else {
+            subjectSelect.classList.remove('text-text-light-secondary', 'dark:text-text-dark-secondary');
+            subjectSelect.classList.add('text-text-light-primary', 'dark:text-text-dark-primary');
+          }
+        }
+
+        // Panggil saat load untuk set warna awal select
+        if (subjectSelect) updateSubjectSelectColor(); 
+        // Tambahkan event listener untuk perubahan
+        if (subjectSelect) subjectSelect.addEventListener('change', updateSubjectSelectColor);
+
 
         let isDarkModeInitial = localStorage.getItem("theme") === "dark" ||
           (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
@@ -740,70 +762,29 @@
           currentYearElement.textContent = new Date().getFullYear();
         }
 
-        // Contact Form Button Glow Observer
-        if (contactFormSubmitButton) { // Menggunakan variabel contactFormSubmitButton
-          const observer = new MutationObserver(() => {
-              if (document.documentElement.classList.contains('dark')) {
-                  contactFormSubmitButton.style.setProperty("--glow-color", "theme('colors.accent-glow-dark')");
-              } else {
-                  contactFormSubmitButton.style.setProperty("--glow-color", "theme('colors.accent-glow-light')");
-              }
-          });
-          observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-          if (document.documentElement.classList.contains('dark')) {
-              contactFormSubmitButton.style.setProperty("--glow-color", "theme('colors.accent-glow-dark')");
-          } else {
-              contactFormSubmitButton.style.setProperty("--glow-color", "theme('colors.accent-glow-light')");
-          }
-        }
-
-        // --- Logic untuk Mengarahkan Form ke WhatsApp START ---
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(event) {
                 event.preventDefault(); 
-
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value; 
-                const subject = document.getElementById('subject').value;
+                const subjectValue = document.getElementById('subject').value;
                 const message = document.getElementById('message').value;
-
-                // --- MULAI DEBUGGING ---
-                console.log("Formulir dikirim. Nilai yang diambil:");
-                console.log("Nama:", name);
-                console.log("Email:", email);
-                console.log("Subjek:", subject);
-                console.log("Pesan:", message);
-                // --- AKHIR DEBUGGING ---
-
-                // GANTI NOMOR INI dengan nomor WhatsApp tujuan Anda (format internasional)
+                
                 const waNumber = '6285161387045'; 
-
                 let waMessage = `Halo AccaiveStudio, saya ingin bertanya.\n\n`;
                 waMessage += `Nama: ${name}\n`;
                 waMessage += `Email: ${email}\n`;
-                waMessage += `Subjek: ${subject}\n\n`;
+                waMessage += `Subjek: ${subjectValue}\n\n`;
                 waMessage += `Pesan:\n${message}\n\n`;
                 waMessage += `-------------------------------------\n`;
                 waMessage += `Pesan ini dikirim dari formulir kontak website Anda.`;
-                
-                // --- MULAI DEBUGGING ---
-                console.log("Pesan WhatsApp yang dibuat (sebelum encoding):", waMessage);
-                // --- AKHIR DEBUGGING ---
-
                 const encodedMessage = encodeURIComponent(waMessage);
                 const whatsappURL = `https://wa.me/${waNumber}?text=${encodedMessage}`;
-
-                // --- MULAI DEBUGGING ---
-                console.log("URL WhatsApp Final:", whatsappURL);
-                // --- AKHIR DEBUGGING ---
-
                 window.open(whatsappURL, '_blank'); 
             });
         }
-        // --- Logic untuk Mengarahkan Form ke WhatsApp END ---
-
-      }); // Akhir dari DOMContentLoaded
+      });
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
   </body>
